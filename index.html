@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>React</title>
+    <!--Задание 1. Разработать React-приложение, выводящее краткую информацию о Вашем городе в браузер. 
+        Например, название города, название страны, год основания, несколько фотографий достопримечательностей города. 
+        При разработке необходимо использовать функциональные компоненты и синтаксис JSX.-->
+
+        <!--Для работы сc React необходимы две библиотеки, к оторые мы получаем из CDN.-->
+    <!--Для работы с кроссбраузерными запросами для данных скриптов установлен атрибут crossorigin.-->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!--Для компиляции кода подключается компилятор Babel-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="comp1"></div>
+    <div id="comp2"></div>
+    <div id="comp3"></div>
+    <script type="text/babel" src="Title.jsx">
+    </script>
+    <script type="text/babel" src="Bratislava.jsx">
+    </script>
+    <script type="text/babel" src="Photos.jsx">
+    </script>
+
+    <script type="text/babel">
+        "use strict"; 
+
+        const rootNode1 = document.getElementById("comp1");   
+        const root1 = ReactDOM.createRoot(rootNode1);
+        root1.render(
+            <React.StrictMode>
+                <Title />
+            </React.StrictMode>
+        );
+
+        const rootNode2 = document.getElementById("comp2");   
+        const root2 = ReactDOM.createRoot(rootNode2);
+        root2.render(
+            <React.StrictMode>
+                <Bratislava />
+            </React.StrictMode>
+         );
+
+        const rootNode3 = document.getElementById("comp3");   
+        const root3 = ReactDOM.createRoot(rootNode3);
+        root3.render(
+            <React.StrictMode>
+                <Photos/>
+            </React.StrictMode>          
+         );
+
+    </script>
+</body>
+</html>
